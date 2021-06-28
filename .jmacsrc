@@ -892,8 +892,13 @@ endif
  Indent region
 :def indentregion if,"markv",then,rindent-!,else,markk,rindent-!,endif
 
+ Custom
 :def cut psh,markk,if,"markv",then,blkdel,else,dellin,endif
 
+:def copyline home,markb,eol,markk,psh,copy,msg,"Copy line",rtn
+
+:def autocopy psh,markk,if,"markv",then,copy,msg,"Region saved",rtn,else,copyline
+ 
  Tags search other window
 :def tagsother psh,nextword,prevword,markb,nextword,markk,copy,
 ensure_other,prevw,tag," ",bol,deleol,yank,yankpop,query!,nextw
@@ -931,8 +936,9 @@ nextword-,prevword-,markb,nextword-	^[ @	Mark word
  bol,insc,delw		^[ ^			Delete indentation
 bol,insc,ltarw!,delw,if,"col != 1",then,insc,endif	^[ ^		Delete indentation
 
-psh,markk,copy,msg,"Region saved",rtn	^[ w	Yank copy
-psh,markk,copy,msg,"Region saved",rtn	^[ W	Yank copy
+ psh,markk,copy,msg,"Region saved",rtn	^[ w	Yank copy
+autocopy				^[ w	Yank copy
+ psh,markk,copy,msg,"Region saved",rtn	^[ W	Yank copy
 
 mode,"rmargin",rtn,"col",rtn,
 msg,"Fill-column set",rtn		^X f	Set right margin
