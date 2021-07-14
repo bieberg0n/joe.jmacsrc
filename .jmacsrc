@@ -193,10 +193,10 @@
 -rmsg  %S Row %4r Col %3c %t  ^X^H for help
 -smsg ** Line %r Col %c Offset %o(0x%O) %e %a(0x%A) Width %w ** 
 -zmsg ** Line %r Col %c Offset %o(0x%O) ** 
--xmsg \i Joe's Own Editor %v (%b) ** Type \b^X ^C\b to exit or \b^X ^H\b for help **\i
+ -xmsg \i Joe's Own Editor %v (%b) ** Type \b^X ^C\b to exit or \b^X ^H\b for help **\i
 
  Key sequence hints which are displayed in various prompts.
--aborthint ^G
+ -aborthint ^G
 -helphint ^X ^H
 
 
@@ -716,8 +716,8 @@ defm2drag	M2DRAG		Select a region of words
 defm3down	M3DOWN		Select the line at the mouse location
 defm3up		M3UP
 defm3drag	M3DRAG		Select a region of lines
-defmiddleup	MIDDLEUP
-defmiddledown	MIDDLEDOWN	Insert text
+ defmiddleup	MIDDLEUP
+ defmiddledown	MIDDLEDOWN	Insert text
 
 xtmouse		^[ [ M		Introduces an xterm mouse event
 extmouse	^[ [ <		Introduces an extended xterm mouse event
