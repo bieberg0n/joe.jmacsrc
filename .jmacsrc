@@ -899,6 +899,10 @@ endif
 
 :def autocopy psh,markk,if,"markv",then,copy,msg,"Region saved",rtn,else,copyline
  
+:def back psh,markk,if,"markv",then,blkdel,else,backs
+
+:def backword psh,markk,if,"markv",then,blkdel,else,backw
+
  Tags search other window
 :def tagsother psh,nextword,prevword,markb,nextword,markk,copy,
 ensure_other,prevw,tag," ",bol,deleol,yank,yankpop,query!,nextw
@@ -926,8 +930,8 @@ transpl		^X ^T			Transpose lines
 transpw		^[ t			Transpose words
 transpw		^[ T			Transpose words
 
-backw		^[ h			Mark paragraph
-backw		^[ H			Mark paragraph
+backword	^[ h			Mark paragraph
+backword	^[ H			Mark paragraph
 
 nextword-,prevword-,markb,nextword-	^[ @	Mark word
 
@@ -1019,8 +1023,8 @@ nxterrforce	^X `
 prverrforce	^X p	Previous error
 prverrforce	^X P
 
-backs		^?		Backspace
-backs		^H
+back		^?		Backspace
+back		^H
 backw		^[ ^?		Backspace word
 backw		^[ ^H
 bknd		^X '		Shell window (joe)
