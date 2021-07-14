@@ -197,7 +197,7 @@
 
  Key sequence hints which are displayed in various prompts.
  -aborthint ^G
--helphint ^X ^H
+ -helphint ^X ^H
 
 
  SECOND SECTION: File name dependant local option settings:
